@@ -10,7 +10,7 @@ const globalErrorHandler = require('./controllers/errorController');
 const cookieParser = require('cookie-parser');
 //for logging middleware
 const morgan = require('morgan');
-
+//test git with this comment
 const contractRoutes = require('./routes/contractRoutes');
 const userRouter = require('./routes/userRoutes');
 const viewRouter = require('./routes/viewRoutes');
