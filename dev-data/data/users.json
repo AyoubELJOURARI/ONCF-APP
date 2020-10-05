@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "5c8a1d5b0190b214360dc057",
+    "name": "Ayoub EL JOURARI",
+    "email": "aeljourari@gmail.com",
+    "role": "admin",
+    "active": true,
+    "photo": "user-1.jpg",
+    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+  },
+  {
+    "_id": "5c8a1dfa2f8fb814b56fa181",
+    "name": "Najah EL GARH",
+    "email": "elg.najah@gmail.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-2.jpg",
+    "password": "$2a$12$hP1h2pnNp7wgyZNRwPsOTeZuNzWBv7vHmsR3DT/OaPSUBQT.y0S.."
+  },
+  {
+    "_id": "5c8a1e1a2f8fb814b56fa182",
+    "name": "Sophie Louise Hart",
+    "email": "sophie@example.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-3.jpg",
+    "password": "$2a$12$9nFqToiTmjgfFVJiQvjmreLt4k8X4gGYCETGapSZOb2hHa55t0dDq"
+  },
+  {
+    "_id": "5c8a1ec62f8fb814b56fa183",
+    "name": "Ayla Cornell",
+    "email": "ayls@example.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-4.jpg",
+    "password": "$2a$12$tm33.M/4pfEbZF64WbFuHuVFv85v4qEhi.ik8njbud7yaoqCZpjiy"
+  }
+]

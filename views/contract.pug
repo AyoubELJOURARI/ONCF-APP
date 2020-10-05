@@ -1,0 +1,77 @@
+extends base
+
+block content
+    section.section-header
+        .header__hero
+            .header__hero-overlay &nbsp;
+            
+
+        .heading-box
+            h1.heading-primary
+                span= contract.name
+            .heading-box__group
+                .heading-box__detail
+                    svg.heading-box__icon
+                        use(xlink:href='/img/icons.svg#icon-clock')
+                    span.heading-box__text= contract.dateDebut.toLocaleString('en-us', {day: 'numeric', month: 'long', year: 'numeric'})
+                .heading-box__detail
+                    svg.heading-box__icon
+                        use(xlink:href='/img/icons.svg#icon-map-pin')
+                    span.heading-box__text= contract.prestataire
+
+    section.section-description
+        .overview-box
+            div
+                .overview-box__group
+                    h2.heading-secondary.ma-bt-lg Détails du Marché
+                    .overview-box__detail
+                        svg.overview-box__icon
+                            use(xlink:href='/img/icons.svg#icon-calendar')
+                        span.overview-box__label Date fin
+                        span.overview-box__text= contract.dateFin.toLocaleString('en-us', {day: 'numeric', month: 'long', year: 'numeric'}) 
+                    .overview-box__detail
+                        svg.overview-box__icon
+                            use(xlink:href='/img/icons.svg#icon-trending-up')
+                        span.overview-box__label ordre de service
+                        span.overview-box__text= contract.os.length
+                    .overview-box__detail
+                        svg.overview-box__icon
+                            use(xlink:href='/img/icons.svg#icon-user')
+                        span.overview-box__label Profils
+                        span.overview-box__text= contract.profil.length
+                    .overview-box__detail
+                        svg.overview-box__icon
+                            use(xlink:href='/img/icons.svg#icon-star')
+                        span.overview-box__label Status du marche
+                        span.overview-box__text= contract.status
+
+                .overview-box__group
+                    h2.heading-secondary.ma-bt-lg Profils
+                    .overview-box__detail
+                        img.overview-box__img(src='/img/users/user-19.jpg', alt='Lead guide')
+                        span.overview-box__label= contract.profil[0].desProfil
+                        span.overview-box__text `Prix le jour: #{contract.profil[0].chargeProfil}-Prix Totale: #{contract.profil[0].prixTotal}`
+                    .overview-box__detail
+                        img.overview-box__img(src='/img/users/user-18.jpg', alt='Tour guide')
+                        span.overview-box__label= contract.profil[1].desProfil
+                        span.overview-box__text `Prix le jour: #{contract.profil[1].chargeProfil}-Prix Totale: #{contract.profil[1].prixTotal}`
+                    .overview-box__detail
+                        img.overview-box__img(src='/img/users/user-17.jpg', alt='Intern')
+                        span.overview-box__label= contract.profil[2].desProfil
+                        span.overview-box__text `Prix le jour: #{contract.profil[2].chargeProfil}-Prix Totale: #{contract.profil[2].prixTotal}`
+                    
+
+        .description-box
+            h2.heading-secondary.ma-bt-lg à-propos du marche
+            p.description__text= contract.summary
+            p.description__text Sed eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!\nDolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipisicing elit!
+
+
+    section.section-reviews
+        .reviews
+            each os in contract.os
+                .reviews__card
+                    .reviews__avatar
+                        h6.reviews__user Ordre de Service #{os.numOS}
+                    p.reviews__text Date debut du #{os.dateDebut.toLocaleString('en-us', {day: 'numeric', month: 'long', year: 'numeric'})}-Date Fin: #{os.dateFin.toLocaleString('en-us', {day: 'numeric', month: 'long', year: 'numeric'})} -- Montant Globale de Marche: #{os.montantGlobal}.
+

@@ -1,0 +1,15 @@
+header.header
+    
+    .header__logo
+        img(src='/img/oncf-logo-1.png', alt='Oncf logo')
+    nav.nav.nav--user
+        if user
+            nav.nav.nav--contracts
+                a.nav__el(href='/contracts') All Contracts
+            a.nav__el.nav__el--logout Log out
+            a.nav__el(href='/me')
+                img.nav__user-img(src= `/img/users/${user.photo}`, alt=`${user.name} photo`)
+                span= user.name.split(' ')[0]
+        else
+            a.nav__el(href='/login') Log in
+            a.nav__el.nav__el--cta(href='/signup') Sign up

@@ -1,0 +1,41 @@
+extends base
+
+block content
+    main.main    
+        .card-container
+            each contract in contracts
+                .card
+                    .card__header
+                        .card__picture
+                            .card__picture-overlay &nbsp;
+                        h3.heading-tertirary
+                            span= contract.name
+
+                    .card__details
+                        h3.card__sub-heading ref: #{contract.numMarche} - status:  #{contract.status}
+                        p.card__text #{contract.summary}
+                        .card__data
+                            svg.card__icon
+                                use(xlink:href='/img/icons.svg#icon-map-pin')
+                            span= contract.prestataire
+                        .card__data
+                            svg.card__icon
+                                use(xlink:href='/img/icons.svg#icon-calendar')
+                            span= contract.dateDebut.toLocaleString('en-us', {day: 'numeric', month: 'long', year: 'numeric'})
+                        .card__data
+                            svg.card__icon
+                                use(xlink:href='/img/icons.svg#icon-flag')
+                            span #{contract.os.length} Order de Service
+                        .card__data
+                            svg.card__icon
+                                use(xlink:href='/img/icons.svg#icon-user')
+                            span #{contract.profil.length} people
+
+                    .card__footer
+                        p
+                            span.card__footer-value= contract.montantGlobal
+                            span.card__footer-text Dhs
+                        p.card__ratings
+                            span.card__footer-value Date Fin:
+                            span.card__footer-text= contract.dateFin.toLocaleString('en-us', {day: 'numeric', month: 'long', year: 'numeric'})
+                        a.btn.btn--green.btn--small(href=`/contract/${contract._id}`) Details
