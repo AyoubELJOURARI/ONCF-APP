@@ -8,6 +8,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const globalErrorHandler = require('./controllers/errorController');
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 //for logging middleware
 const morgan = require('morgan');
 //test git with this comment
@@ -52,6 +53,8 @@ app.use(
     whitelist: ['numMarche', 'status', 'name'],
   })
 );
+
+app.use(compression());
 
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
