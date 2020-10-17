@@ -10,4 +10,4 @@ NodeJS , Express , MongoDB , Mongoose
 
 Please check and modify the path in your Dockerfile (COPY ...) in order to avoid Error
 
---!-- The Dockerfile must be in the same folder level with APP folder
+--!-- The Dockerfile must be in the same folder level with ONCF-APP folder
