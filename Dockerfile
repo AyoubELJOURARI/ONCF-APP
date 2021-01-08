@@ -1,11 +1,11 @@
-FROM node:12
+.FROM node:12
 
 Label maintainer=AyoubELJOURARI
 
 
 WORKDIR /home/node/
 
-COPY ONCF-APP/ ONCF-APP/
+COPY . ONCF-APP/
 
 WORKDIR /home/node/ONCF-APP/
 
